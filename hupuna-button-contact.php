@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Hupuna Button Contact
- * Plugin URI:        https://hupuna.com/hupuna-button-contact
+ * Plugin URI:        https://github.com/hopcarton/hupuna-button-contact
  * Description:       A professional contact button plugin for WordPress, including Hotline, Zalo, Telegram, and social media links.
  * Version:           1.0.0
  * Author:            Hupuna
