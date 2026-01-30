@@ -1,6 +1,6 @@
 # Hupuna Button Contact
 
-Base plugin for contact buttons (Hotline, Zalo, Tiktok, etc.) designed for internship projects.
+Base plugin for contact buttons (Hotline, Zalo, Tiktok, etc.)
 
 ## Project Structure
 - `hupuna-button-contact.php`: Main entry point.
