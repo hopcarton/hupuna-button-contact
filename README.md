@@ -27,24 +27,22 @@ Dùng cho học tập, nội bộ và dự án thực tập.
 
 hupuna-button-contact/
 ├── assets/
-│ ├── css/
-│ ├── js/
-│ └── images/
+│   ├── css/
+│   ├── js/
+│   └── images/
 ├── inc/
-│ ├── class-hbc.php # Core bootstrap
-│ ├── class-hbc-settings.php # Admin settings
-│ ├── class-hbc-init.php # Load init (language, enqueue, settings...)
-│ └── class-hbc-frontend.php # Frontend render
+│   ├── class-hbc.php            # Core bootstrap
+│   ├── class-hbc-settings.php   # Admin settings
+│   ├── class-hbc-init.php       # Load init (language, enqueue, settings...)
+│   └── class-hbc-frontend.php   # Frontend render
 ├── templates/
-│ ├── setting-page.php # Admin UI
-│ └── frontend-page.php # Frontend HTML
+│   ├── setting-page.php         # Admin UI
+│   └── frontend-page.php        # Frontend HTML
 ├── languages/
-├── hupuna-button-contact.php # Main plugin file
-├── uninstall.php # Cleanup on delete
-├── readme.txt # WordPress.org readme
-└── README.md # GitHub readme
-
----
+├── hupuna-button-contact.php    # Main plugin file
+├── uninstall.php                # Cleanup on delete
+├── readme.txt                   # WordPress.org readme
+└── README.md                    # GitHub readme
 
 ## 📦 Cài đặt
 
