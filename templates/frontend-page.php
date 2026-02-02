@@ -106,14 +106,14 @@ if (in_array('mobile', $hide_on))  $hide_class .= ' hide-mobile';
                 style="background:<?php echo esc_attr($formColor); ?>; color:<?php echo esc_attr($formColor); ?>;">
         </button>
     <?php endif; ?>
-
-    <!-- Popup CF7 -->
-    <?php if ($cf7_form_id && post_type_exists('wpcf7_contact_form')): ?>
-        <div class="hbc-popup-overlay">
-            <div class="hbc-popup">
-                <button class="hbc-close">&times;</button>
-                <?php echo do_shortcode('[contact-form-7 id="' . intval($cf7_form_id) . '"]'); ?>
-            </div>
-        </div>
-    <?php endif; ?>
 </div>
+
+<!-- Popup CF7 -->
+<?php if ($cf7_form_id && post_type_exists('wpcf7_contact_form')): ?>
+    <div class="hbc-popup-overlay">
+        <div class="hbc-popup">
+            <button class="hbc-close">&times;</button>
+            <?php echo do_shortcode('[contact-form-7 id="' . intval($cf7_form_id) . '"]'); ?>
+        </div>
+    </div>    
+<?php endif; ?>

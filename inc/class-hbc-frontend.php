@@ -23,20 +23,7 @@ if (!class_exists('HBC_Frontend', false)) {
 		 */
 		public function enqueue_assets()
 		{
-			wp_enqueue_style(
-				'hbc-style',
-				plugin_dir_url(__FILE__) . '../assets/css/button-contact.css',
-				[],
-				filemtime(plugin_dir_path(__FILE__) . '../assets/css/button-contact.css')
-			);
-
-			wp_enqueue_script(
-				'hbc-script',
-				plugin_dir_url(__FILE__) . '../assets/js/button-contact.js',
-				[],
-				filemtime(plugin_dir_path(__FILE__) . '../assets/js/button-contact.js'),
-				true
-			);
+			
 		}
 
 		/**

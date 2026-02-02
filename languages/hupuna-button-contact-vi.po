@@ -69,11 +69,11 @@ msgstr "Hupuna"
 
 #. Name of the plugin
 msgid "Hupuna Button Contact"
-msgstr "Nút liên hệ Hupuna"
+msgstr "Hupuna Button Contact"
 
 #: templates/setting-page.php:23
-msgid "Instagram"
-msgstr "Instagram"
+msgid "Link Instagram"
+msgstr "Link Instagram"
 
 #: inc/class-hbc-settings.php:167
 msgid "Invalid Contact Form selected"
@@ -101,7 +101,7 @@ msgstr "Link Fanpage"
 
 #: templates/setting-page.php:43
 msgid "Link Message"
-msgstr "Link nhắn tin"
+msgstr "Link Message"
 
 #: templates/setting-page.php:8
 msgid "Phone"
@@ -124,8 +124,8 @@ msgid "Telegram"
 msgstr "Telegram"
 
 #: templates/setting-page.php:33
-msgid "Tiktok"
-msgstr "Tiktok"
+msgid "Link Tiktok"
+msgstr "Link Tiktok"
 
 #: templates/setting-page.php:93
 msgid "Top left"
@@ -143,9 +143,13 @@ msgstr "Viber"
 msgid "Whatsapp"
 msgstr "Whatsapp"
 
+#: ./hupuna-button-contact.php
+msgid "Settings"
+msgstr "Cài đặt"
+
 #: templates/setting-page.php:28
-msgid "Youtube"
-msgstr "Youtube"
+msgid "Link Youtube"
+msgstr "Link Youtube"
 
 #: templates/setting-page.php:13
 msgid "Zalo"

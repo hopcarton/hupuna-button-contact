@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const popup = document.querySelector('.hbc-popup-overlay');
     const close = document.querySelector('.hbc-close');
 
+    console.log(popup)
+
     if (!btn || !popup) return;
 
     btn.onclick = () => popup.classList.add('active');

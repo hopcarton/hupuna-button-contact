@@ -15,22 +15,22 @@ $services = [
         'default_color' => '#FFE6E6',
     ],
     'telegram' => [
-        'label' => __('Telegram', 'hupuna-button-contact'),
+        'label' => __('Link Telegram', 'hupuna-button-contact'),
         'placeholder' => 'Link Telegram',
         'default_color' => '#E6F6FF',
     ],
     'instagram' => [
-        'label' => __('Instagram', 'hupuna-button-contact'),
+        'label' => __('Link Instagram', 'hupuna-button-contact'),
         'placeholder' => 'Link Instagram',
         'default_color' => '#FFF0E6',
     ],
     'youtube' => [
-        'label' => __('Youtube', 'hupuna-button-contact'),
+        'label' => __('Link Youtube', 'hupuna-button-contact'),
         'placeholder' => 'Link Youtube',
         'default_color' => '#FFECEC',
     ],
     'tiktok' => [
-        'label' => __('Tiktok', 'hupuna-button-contact'),
+        'label' => __('Link Tiktok', 'hupuna-button-contact'),
         'placeholder' => 'Link Tiktok',
         'default_color' => '#F2F2F2',
     ],
@@ -151,7 +151,6 @@ $services = [
                 case 'button':
                     default:
                         foreach ($services as $key => $service):
-                            error_log('Rendering setting for: ' . $opts[$key . '_color'] ?? $service['default_color']);
                             ?>
                             <tr>
                                 <th><?php echo esc_html($service['label']); ?></th>
@@ -172,25 +171,29 @@ $services = [
                         ?>
 
                         <!-- CF7 -->
-                        <tr>
-                            <th><?php esc_html_e('Contact form (CF7)', 'hupuna-button-contact'); ?></th>
-                            <td>
-                                <select name="hupuna_button_contact_settings[cf7_form_id]">
-                                    <option value="">
-                                        <?php esc_html_e('-- Select a contact form --', 'hupuna-button-contact'); ?>
-                                    </option>
-                                    <?php foreach ($cf7_forms as $form): ?>
-                                        <option value="<?php echo esc_attr($form->ID); ?>" <?php selected($opts['cf7_form_id'] ?? '', $form->ID); ?>>
-                                            <?php echo esc_html($form->post_title); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+                        <?php if ( class_exists('WPCF7') ) : ?>
+                            <tr>
+                                <th><?php esc_html_e('Contact form (CF7)', 'hupuna-button-contact'); ?></th>
+                                <td>
+                                        <select name="hupuna_button_contact_settings[cf7_form_id]">
+                                            <option value="">
+                                                <?php esc_html_e('-- Select a contact form --', 'hupuna-button-contact'); ?>
+                                            </option>
 
-                                <input type="color"
-                                    name="hupuna_button_contact_settings[form_color]"
-                                    value="<?php echo esc_attr($opts['form_color'] ?? '#00b894'); ?>">
-                            </td>
-                        </tr>
+                                            <?php foreach ($cf7_forms as $form): ?>
+                                                <option value="<?php echo esc_attr($form->ID); ?>"
+                                                    <?php selected($opts['cf7_form_id'] ?? '', $form->ID); ?>>
+                                                    <?php echo esc_html($form->post_title); ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+
+                                        <input type="color"
+                                            name="hupuna_button_contact_settings[form_color]"
+                                            value="<?php echo esc_attr($opts['form_color'] ?? '#00b894'); ?>"> 
+                                </td>
+                            </tr>
+                        <?php endif; ?>
                         <?php
                     break;
             }

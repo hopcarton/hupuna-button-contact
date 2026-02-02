@@ -1,14 +1,13 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Hupuna Button Contact\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-31 07:32+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: 2026-01-31 07:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: Tiếng Việt\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,134 +17,149 @@ msgstr ""
 
 #: templates/setting-page.php:181
 msgid "-- Select a contact form --"
-msgstr ""
+msgstr "Chọn form liên hệ"
 
 #. Description of the plugin
 msgid ""
 "A professional contact button plugin for WordPress, including Hotline, Zalo, "
 "Telegram, and social media links."
 msgstr ""
+"Plugin nút liên hệ chuyên nghiệp cho WordPress, bao gồm Hotline, Zalo, "
+"Telegram và các mạng xã hội."
 
 #: templates/setting-page.php:92
 msgid "Bottom left"
-msgstr ""
+msgstr "Dưới bên trái"
 
 #: templates/setting-page.php:94
 msgid "Bottom right"
-msgstr ""
+msgstr "Dưới bên phải"
 
 #: templates/setting-page.php:66
 msgid "Button Contact"
-msgstr ""
+msgstr "Nút liên hệ"
 
 #: templates/setting-page.php:177
 msgid "Contact form (CF7)"
-msgstr ""
+msgstr "Form liên hệ"
 
 #: templates/setting-page.php:87
 msgid "Display position"
-msgstr ""
+msgstr "Vị trí hiển thị"
 
 #: templates/setting-page.php:145
 msgid "Eg: 0.8 - 0.9 - 1 - 1.2 (Default 1)"
-msgstr ""
+msgstr "Ví dụ: 0.8 - 0.9 - 1 - 1.2 (Mặc định 1)"
 
 #: templates/setting-page.php:111
 msgid "Hide on"
-msgstr ""
+msgstr "Ẩn trên"
 
 #. URI of the plugin
 msgid "https://github.com/hopcarton/hupuna-button-contact"
-msgstr ""
+msgstr "https://github.com/hopcarton/hupuna-button-contact"
 
 #. Author URI of the plugin
 msgid "https://hupuna.com/"
-msgstr ""
+msgstr "https://hupuna.com/"
 
 #. Author of the plugin
 msgid "Hupuna"
-msgstr ""
+msgstr "Hupuna"
 
 #. Name of the plugin
 msgid "Hupuna Button Contact"
-msgstr ""
+msgstr "Hupuna Button Contact"
 
 #: templates/setting-page.php:23
-msgid "Link Instagram"
-msgstr ""
+msgid "Instagram"
+msgstr "Instagram"
 
 #: inc/class-hbc-settings.php:167
 msgid "Invalid Contact Form selected"
-msgstr ""
+msgstr "Form liên hệ được chọn không hợp lệ"
 
 #: inc/class-hbc-settings.php:62
 msgid "Invalid phone number"
-msgstr ""
+msgstr "Số điện thoại không hợp lệ"
 
 #: inc/class-hbc-settings.php:85
 msgid "Invalid Viber number"
-msgstr ""
+msgstr "Số viber không hợp lệ"
 
 #: inc/class-hbc-settings.php:96
 msgid "Invalid Whatsapp number"
-msgstr ""
+msgstr "Số Whatsapp không hợp lệ"
 
 #: inc/class-hbc-settings.php:74
 msgid "Invalid Zalo number"
-msgstr ""
+msgstr "Số Zalo không hợp lệ"
 
 #: templates/setting-page.php:38
 msgid "Link Fanpage"
-msgstr ""
+msgstr "Link Fanpage"
 
 #: templates/setting-page.php:43
 msgid "Link Message"
-msgstr ""
+msgstr "Link Message"
 
 #: templates/setting-page.php:8
 msgid "Phone"
-msgstr ""
+msgstr "Số điện thoại"
 
 #: templates/setting-page.php:71
 msgid "Settings"
-msgstr ""
+msgstr "Cài đặt"
 
 #: templates/setting-page.php:135
 msgid "Size scale"
-msgstr ""
+msgstr "Tỷ lệ kích thước"
 
 #: inc/class-hbc-settings.php:121
 msgid "Size scale must be between 0.5 and 2"
-msgstr ""
+msgstr "Tỷ lệ kích thước phải nằm trong khoảng từ 0.5 đến 2"
 
 #: templates/setting-page.php:18
-msgid "Link Telegram"
-msgstr ""
+msgid "Telegram"
+msgstr "Telegram"
 
 #: templates/setting-page.php:33
-msgid "Link Tiktok"
-msgstr ""
+msgid "Tiktok"
+msgstr "Tiktok"
 
 #: templates/setting-page.php:93
 msgid "Top left"
-msgstr ""
+msgstr "Trên bên trái"
 
 #: templates/setting-page.php:95
 msgid "Top right"
-msgstr ""
+msgstr "Trên bên phải"
 
 #: templates/setting-page.php:48
 msgid "Viber"
-msgstr ""
+msgstr "Viber"
 
 #: templates/setting-page.php:53
 msgid "Whatsapp"
-msgstr ""
+msgstr "Whatsapp"
+
+#: ./hupuna-button-contact.php
+msgid "Settings"
+msgstr "Cài đặt"
+
+#: templates/setting-page.php:199
+msgid "Contact Form 7 is not installed or activated."
+msgstr "Chưa cài hoặc kích hoạt Contact Form 7"
+
+#: templates/setting-page.php:205
+msgid "Install Contact Form 7"
+msgstr "Cài Contact Form 7"
 
 #: templates/setting-page.php:28
-msgid "Link Youtube"
-msgstr ""
+msgid "Youtube"
+msgstr "Youtube"
 
 #: templates/setting-page.php:13
 msgid "Zalo"
 msgstr ""
+"Zalo\n"
