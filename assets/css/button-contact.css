@@ -1,31 +1,31 @@
 /* Container cố định */
-.float-container {
+.hbc-float-container {
     position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     z-index: 9999;
 }
 
 /* ===== POSITIONS ===== */
-.float-container.pos-bottom-left { left: 20px; bottom: 40px; }
-.float-container.pos-bottom-right { right: 20px; bottom: 40px; }
-.float-container.pos-top-left { left: 20px; top: 120px; }
-.float-container.pos-top-right { right: 20px; top: 120px; }
+.hbc-float-container.pos-bottom-left { left: 20px; bottom: 40px; }
+.hbc-float-container.pos-bottom-right { right: 20px; bottom: 40px; }
+.hbc-float-container.pos-top-left { left: 20px; top: 60px; }
+.hbc-float-container.pos-top-right { right: 20px; top: 60px; }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .float-container.pos-bottom-left,
-    .float-container.pos-bottom-right {
+    .hbc-float-container.pos-bottom-left,
+    .hbc-float-container.pos-bottom-right {
         bottom: 90px;
     }
 }
 
 /* Nút chung */
-.float-btn {
+.hbc-float-btn {
     position: relative;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
 }
 
 /* Vòng sóng */
-.float-btn::before {
+.hbc-float-btn::before {
     content: "";
     position: absolute;
     inset: -8px;
@@ -51,7 +51,7 @@
 }
 
 /* Icon */
-.float-btn::after {
+.hbc-float-btn::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -61,7 +61,7 @@
     animation: iconShake 0.8s infinite;
 }
 
-button.float-btn {
+button.hbc-float-btn {
     -webkit-appearance: none;
     appearance: none;
     border: 5px solid currentColor !important;
@@ -70,17 +70,17 @@ button.float-btn {
 }
 
 /* ICON */
-.call-btn::after { background-image: url('../images/phone.png'); }
-.zalo-btn::after { background-image: url('../images/zalo.png'); }
-.contact-btn::after { background-image: url('../images/contact.png'); }
-.telegram-btn::after { background-image: url('../images/telegram.png'); }
-.instagram-btn::after { background-image: url('../images/instagram.png'); }
-.youtube-btn::after { background-image: url('../images/youtube.png'); }
-.tiktok-btn::after { background-image: url('../images/tiktok.png'); }
-.fanpage-btn::after { background-image: url('../images/fanpage.png'); }
-.link-message-btn::after { background-image: url('../images/message.png'); }
-.viber-btn::after { background-image: url('../images/viber.png'); }
-.whatsapp-btn::after { background-image: url('../images/whatsapp.png'); }
+.hbc-call-btn::after { background-image: url('../images/phone.png'); background-size: 30px; }
+.hbc-zalo-btn::after { background-image: url('../images/zalo.png'); background-size: 30px; }
+.hbc-contact-btn::after { background-image: url('../images/mail.png'); background-size: 30px; }
+.hbc-telegram-btn::after { background-image: url('../images/telegram.png'); background-size: 30px; }
+.hbc-instagram-btn::after { background-image: url('../images/instagram.png'); background-size: 30px; }
+.hbc-youtube-btn::after { background-image: url('../images/youtube.png'); background-size: 30px; }
+.hbc-tiktok-btn::after { background-image: url('../images/tiktok.png'); background-size: 30px; }
+.hbc-fanpage-btn::after { background-image: url('../images/facebook.png'); background-size: 30px; }
+.hbc-link-message-btn::after { background-image: url('../images/message.png'); background-size: 30px; }
+.hbc-viber-btn::after { background-image: url('../images/viber.png'); background-size: 30px; }
+.hbc-whatsapp-btn::after { background-image: url('../images/whatsapp.png'); background-size: 30px; }
 
 /* Popup form */
 .hbc-popup-overlay {
@@ -106,31 +106,21 @@ button.float-btn {
     position: relative;
 }
 
-.hbc-close {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    font-size: 26px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
 /* Hide on devices */
 
 /* Hide on Desktop */
 @media (min-width: 1025px) {
-    .hide-desktop { display: none !important; }
+    .hbc-hide-desktop { display: none !important; }
 }
 
 /* Hide on Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .hide-tablet { display: none !important; }
+    .hbc-hide-tablet { display: none !important; }
 }
 
 /* Hide on Mobile */
 @media (max-width: 767px) {
-    .hide-mobile { display: none !important; }
+    .hbc-hide-mobile { display: none !important; }
 }
 
 
@@ -161,7 +151,7 @@ button.float-btn {
 
 /* Mobile size */
 @media(max-width: 768px) {
-    .float-btn {
+    .hbc-float-btn {
         width: 48px;
         height: 48px;
     }

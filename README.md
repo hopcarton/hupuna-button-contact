@@ -1,102 +1,81 @@
-# Hupuna Button Contact
-A base WordPress plugin for floating contact buttons (Hotline, Zalo, Telegram, Whatsapp, Viber, Tiktok, Instagram, Youtube, Fanpage, etc.).  
-Designed for learning, internal use, and internship projects.
-Base plugin for contact buttons (Hotline, Zalo, Tiktok, etc.)
+Hupuna Button Contact
 
----
+Base WordPress plugin for floating contact buttons (Hotline, Zalo, Telegram, Whatsapp, Viber, Tiktok, Instagram, Youtube, Fanpage…).
+Dùng cho học tập, nội bộ và dự án thực tập.
 
-## ✨ Features
+✨ Tính năng chính
 
-- 📞 Hotline (Phone)
-- 💬 Zalo
-- ✈️ Telegram
-- 💜 Viber
-- 🟢 Whatsapp
-- 📷 Instagram
-- ▶️ Youtube
-- 🎵 Tiktok
-- 👍 Facebook Fanpage
-- 🔗 Custom link message
-- 📨 Contact Form 7 integration
-- 🎨 Custom color for each service
-- 📍 Position: top/bottom – left/right
-- 📱 Hide on Mobile / Tablet / Desktop
-- 🔍 Size scale (zoom in / zoom out)
-- ⚡ Lightweight, no external dependencies
+📞 Hotline (click gọi điện)
 
----
+💬 Zalo / Telegram / Whatsapp / Viber (mở chat trực tiếp)
 
-## 📦 Installation
+📷 Instagram / ▶️ Youtube / 🎵 Tiktok / 👍 Fanpage (link mạng xã hội)
 
-1. Clone or download this repository.
-2. Upload the plugin folder to:
+🔗 Link tuỳ chỉnh (gắn link bất kỳ)
+
+📨 Tích hợp Contact Form 7 (mở form liên hệ)
+
+🎨 Tuỳ chỉnh màu từng nút
+
+📍 Vị trí hiển thị: trên/dưới – trái/phải
+
+📱 Ẩn theo thiết bị: Mobile / Tablet / Desktop
+
+🔍 Zoom to/nhỏ icon
+
+📦 Cài đặt
+
+Upload plugin vào:
 
 wp-content/plugins/hupuna-button-contact
 
 
-3. Activate **Hupuna Button Contact** in WordPress Admin → Plugins.
-4. Go to **Button Contact** menu to configure your buttons.
+Kích hoạt plugin trong Admin → Plugins
 
----
+Vào menu Button Contact để cấu hình
 
-## 🗂 Project Structure
+🗃 Lưu dữ liệu
 
-hupuna-button-contact/
-├── assets/
-│ ├── css/
-│ ├── js/
-│ └── images/
-├── inc/
-│ ├── class-hbc.php # Core bootstrap
-│ ├── class-hbc-settings.php # Admin settings
-│ └── class-hbc-frontend.php # Frontend render
-├── templates/
-│ ├── setting-page.php # Admin UI
-│ └── fontend-page.php # Frontend HTML
-├── languages/
-├── hupuna-button-contact.php # Main plugin file
-├── uninstall.php # Cleanup on delete
-├── readme.txt # WordPress.org readme
-└── README.md # GitHub readme
-
----
-
-## 🗃 Data Storage
-
-All plugin settings are stored in WordPress options table:
+Cấu hình được lưu trong:
 
 wp_options.option_name = hupuna_button_contact_settings
 
+🧹 Gỡ cài đặt
 
----
-
-## 🧹 Uninstall
-
-When deleting the plugin from WordPress Admin, all plugin data will be removed automatically via:
+Xoá plugin sẽ tự động xoá dữ liệu thông qua:
 
 uninstall.php
 
+🧑‍💻 Môi trường phát triển
 
----
+WP 5.8+
 
-## 🧑‍💻 Development
+PHP 7.2+
 
-- WordPress 5.8+
-- PHP 7.2+
-- OOP structure (Core / Admin / Frontend)
-- Uses WordPress Settings API
-- Template-based frontend rendering
+OOP, Settings API, Template render
 
----
+📦 Về Hupuna Group
 
-## 🧾 Changelog
+Công ty Cổ phần Hupuna Group là đơn vị hàng đầu trong lĩnh vực sản xuất và in ấn bao bì giấy, hộp carton chất lượng cao tại Việt Nam.
 
-### 1.0.0
-- Initial release
+Chúng tôi chuyên cung cấp:
 
----
+📦 Hộp carton 3 lớp, 5 lớp, nắp cài, nắp âm dương
+🎨 In logo – thiết kế hộp carton theo yêu cầu
+🏭 Giải pháp đóng gói tối ưu cho doanh nghiệp, cửa hàng online và xuất khẩu
 
-## 📄 License
+Hupuna cam kết mang đến chất lượng bao bì tốt nhất, giá thành cạnh tranh và dịch vụ hỗ trợ tận tâm — giúp doanh nghiệp nâng tầm thương hiệu qua từng chi tiết đóng gói.
 
-GPL v2 or later  
-https://www.gnu.org/licenses/gpl-2.0.html
+🌐 Thông tin liên hệ
+Công ty Cổ phần Hupuna Group
+
+📍 Địa chỉ: 119 Ngõ 83 Phố Vũ Đức Úy, Tân Triều, Thanh Trì, Hà Nội
+🌎 Website: https://hupuna.com/hop-carton/
+
+📞 Hotline/Zalo: 0889 736 889
+✉️ Email: Ceohupuna@gmail.com
+
+🏷️ Hashtags SEO
+#HupunaGroup #phukiendonggoi #hopcarton #thungcarton #baobigiay #hopcartontheoyeucau #inlogothuonghieu #baobihupuna
+
+© 2025 Hupuna Group — All rights reserved.

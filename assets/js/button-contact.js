@@ -1,25 +1,37 @@
-jQuery(document).ready(function ($) {
-    $('.hbc-main').on('click', function () {
-        $('.hbc-item').toggle();
-    });
-});
-
 document.addEventListener('DOMContentLoaded', function () {
+    // Toggle danh sách nút con
+    const mainBtn = document.querySelector('.hbc-main');
+    const items = document.querySelectorAll('.hbc-item');
 
-    const btn = document.querySelector('.contact-btn');
+    if (mainBtn) {
+        mainBtn.addEventListener('click', function () {
+            items.forEach(function (item) {
+                if (item.style.display === 'none' || getComputedStyle(item).display === 'none') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Popup CF7
+    const btn = document.querySelector('.hbc-contact-btn');
     const popup = document.querySelector('.hbc-popup-overlay');
-    const close = document.querySelector('.hbc-close');
 
-    console.log(popup)
+    if (btn && popup) {
+        btn.addEventListener('click', function () {
+            popup.classList.add('active');
+        });
+    }
 
-    if (!btn || !popup) return;
-
-    btn.onclick = () => popup.classList.add('active');
-    close.onclick = () => popup.classList.remove('active');
-
-    popup.onclick = e => {
-        if (e.target === popup) popup.classList.remove('active');
-    };
+    if (popup) {
+        popup.addEventListener('click', function (e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+            }
+        });
+    }
 });
 
 // CF7 gửi thành công → tự đóng popup

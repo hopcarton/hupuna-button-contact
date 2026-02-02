@@ -1,62 +1,5 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 
-<?php
-$active_tab = $_GET['tab'] ?? 'button';
-
-$services = [
-    'phone' => [
-        'label' => __('Phone', 'hupuna-button-contact'),
-        'placeholder' => '+84987654321',
-        'default_color' => '#E6F0FF',
-    ],
-    'zalo' => [
-        'label' => __('Zalo', 'hupuna-button-contact'),
-        'placeholder' => '+84987654321',
-        'default_color' => '#FFE6E6',
-    ],
-    'telegram' => [
-        'label' => __('Link Telegram', 'hupuna-button-contact'),
-        'placeholder' => 'Link Telegram',
-        'default_color' => '#E6F6FF',
-    ],
-    'instagram' => [
-        'label' => __('Link Instagram', 'hupuna-button-contact'),
-        'placeholder' => 'Link Instagram',
-        'default_color' => '#FFF0E6',
-    ],
-    'youtube' => [
-        'label' => __('Link Youtube', 'hupuna-button-contact'),
-        'placeholder' => 'Link Youtube',
-        'default_color' => '#FFECEC',
-    ],
-    'tiktok' => [
-        'label' => __('Link Tiktok', 'hupuna-button-contact'),
-        'placeholder' => 'Link Tiktok',
-        'default_color' => '#F2F2F2',
-    ],
-    'fanpage' => [
-        'label' => __('Link Fanpage', 'hupuna-button-contact'),
-        'placeholder' => 'Link Fanpage',
-        'default_color' => '#E7F0FF',
-    ],
-    'link_message' => [
-        'label' => __('Link Message', 'hupuna-button-contact'),
-        'placeholder' => 'Link Message',
-        'default_color' => '#E6FFFA',
-    ],
-    'viber' => [
-        'label' => __('Viber', 'hupuna-button-contact'),
-        'placeholder' => '+84987654321',
-        'default_color' => '#F2E9FF',
-    ],
-    'whatsapp' => [
-        'label' => __('Whatsapp', 'hupuna-button-contact'),
-        'placeholder' => '+84987654321',
-        'default_color' => '#E9FFF1',
-    ],
-];
-?>
-
 <div class="wrap">
     <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
@@ -88,10 +31,10 @@ $services = [
                             <select name="hupuna_button_contact_settings[position]">
                                 <?php
                                 $positions = [
-                                    'bottom-left' => __('Bottom left', 'hupuna-button-contact'),
-                                    'top-left' => __('Top left', 'hupuna-button-contact'),
-                                    'bottom-right' => __('Bottom right', 'hupuna-button-contact'),
-                                    'top-right' => __('Top right', 'hupuna-button-contact'),
+                                    'bottom-left'   => __('Bottom left', 'hupuna-button-contact'),
+                                    'top-left'      => __('Top left', 'hupuna-button-contact'),
+                                    'bottom-right'  => __('Bottom right', 'hupuna-button-contact'),
+                                    'top-right'     => __('Top right', 'hupuna-button-contact'),
                                 ];
                                 foreach ($positions as $key => $label) {
                                     printf(
@@ -199,7 +142,6 @@ $services = [
             }
             ?>
         </table>
-
         <?php submit_button(); ?>
     </form>
 </div>

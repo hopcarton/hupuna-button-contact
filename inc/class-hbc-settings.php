@@ -45,66 +45,81 @@ class HBC_Settings
 	 */
 	public function sanitize_settings($input)
 	{
-		$old = get_option('hupuna_button_contact_settings', []);
-		$output = is_array($old) ? $old : [];
+		$old 		  = get_option('hupuna_button_contact_settings', []);
+		$output 	  = is_array($old) ? $old : [];
 
-		$phoneRaw = trim($input['phone'] ?? '');
-		$zaloRaw = trim($input['zalo'] ?? '');
-		$viberRaw = trim($input['viber'] ?? '');
-		$whatsappRaw = trim($input['whatsapp'] ?? '');
+		$phoneRaw 	  = trim($input['phone'] ?? '');
+		$zaloRaw 	  = trim($input['zalo'] ?? '');
+		$viberRaw 	  = trim($input['viber'] ?? '');
+		$whatsappRaw  = trim($input['whatsapp'] ?? '');
 
 		// Phone
-		if ($phoneRaw !== '') {
-			if (!preg_match('/^\+?\d{9,15}$/', $phoneRaw)) {
-				add_settings_error(
-					'hupuna_button_contact_settings',
-					'invalid_phone',
-					__('Invalid phone number', 'hupuna-button-contact')
-				);
+		if (isset($input['phone'])) {
+			$phoneRaw = trim($input['phone']);
+
+			if ($phoneRaw !== '') {
+				if (!preg_match('/^\+?\d{9,15}$/', $phoneRaw)) {
+					add_settings_error(
+						'hupuna_button_contact_settings',
+						'invalid_phone',
+						__('Invalid phone number', 'hupuna-button-contact')
+					);
+				} else {
+					$output['phone'] = preg_replace('/[^\d]/', '', $phoneRaw);
+				}
 			} else {
-				$output['phone'] = preg_replace('/[^\d]/', '', $phoneRaw);
+				unset($output['phone']);
 			}
-		} else {
-			unset($output['phone']);
 		}
 
 		// Zalo
-		if ($zaloRaw !== '') {
-			if (!preg_match('/^\+?\d{9,15}$/', $zaloRaw)) {
-				add_settings_error('hupuna_button_contact_settings', 'invalid_zalo', __('Invalid Zalo number', 'hupuna-button-contact'));
+		if (isset($input['zalo'])) {
+			$zaloRaw = trim($input['zalo']);
+
+			if ($zaloRaw !== '') {
+				if (!preg_match('/^\+?\d{9,15}$/', $zaloRaw)) {
+					add_settings_error('hupuna_button_contact_settings', 'invalid_zalo', __('Invalid Zalo number', 'hupuna-button-contact'));
+				} else {
+					$output['zalo'] = preg_replace('/[^\d]/', '', $zaloRaw);
+				}
 			} else {
-				$output['zalo'] = preg_replace('/[^\d]/', '', $zaloRaw);
+				unset($output['zalo']);
 			}
-		} else {
-			unset($output['zalo']);
 		}
 
 		// Viber
-		if ($viberRaw !== '') {
-			if (!preg_match('/^\+?\d{9,15}$/', $viberRaw)) {
-				add_settings_error('hupuna_button_contact_settings', 'invalid_viber', __('Invalid Viber number', 'hupuna-button-contact'));
+		if (isset($input['viber'])) {
+			$viberRaw = trim($input['viber']);
+
+			if ($viberRaw !== '') {
+				if (!preg_match('/^\+?\d{9,15}$/', $viberRaw)) {
+					add_settings_error('hupuna_button_contact_settings', 'invalid_viber', __('Invalid Viber number', 'hupuna-button-contact'));
+				} else {
+					$output['viber'] = preg_replace('/[^\d]/', '', $viberRaw);
+				}
 			} else {
-				$output['viber'] = preg_replace('/[^\d]/', '', $viberRaw);
+				unset($output['viber']);
 			}
-		} else {
-			unset($output['viber']);
 		}
 
 		// Whatsapp
-		if ($whatsappRaw !== '') {
-			if (!preg_match('/^\+?\d{9,15}$/', $whatsappRaw)) {
-				add_settings_error('hupuna_button_contact_settings', 'invalid_whatsapp', __('Invalid Whatsapp number', 'hupuna-button-contact'));
+		if (isset($input['whatsapp'])) {
+			$whatsappRaw = trim($input['whatsapp']);
+
+			if ($whatsappRaw !== '') {
+				if (!preg_match('/^\+?\d{9,15}$/', $whatsappRaw)) {
+					add_settings_error('hupuna_button_contact_settings', 'invalid_whatsapp', __('Invalid Whatsapp number', 'hupuna-button-contact'));
+				} else {
+					$output['whatsapp'] = preg_replace('/[^\d]/', '', $whatsappRaw);
+				}
 			} else {
-				$output['whatsapp'] = preg_replace('/[^\d]/', '', $whatsappRaw);
+				unset($output['whatsapp']);
 			}
-		} else {
-			unset($output['whatsapp']);
 		}
 
 		// Settings fields
-
 		// Hide on
-		if (isset($input['hide_on'])) {
+		if (array_key_exists('hide_on', $input)) {
 			$output['hide_on'] = is_array($input['hide_on'])
 				? array_map('sanitize_key', $input['hide_on'])
 				: [];
@@ -112,7 +127,7 @@ class HBC_Settings
 
 		// Size scale
 		if (isset($input['size_scale'])) {
-			$scale = floatval($input['size_scale']);
+			$scale = floatval(value: $input['size_scale']);
 
 			if ($scale < 0.5 || $scale > 2) {
 				add_settings_error(
@@ -133,21 +148,22 @@ class HBC_Settings
 
 		// Colors
 		$color_fields = [
-			'phone_color' => '#E6F0FF',
-			'zalo_color' => '#FFE6E6',
-			'viber_color' => '#F2E9FF',
-			'whatsapp_color' => '#E9FFF1',
-			'telegram_color' => '#E6F6FF',
-			'instagram_color' => '#FFF0E6',
-			'youtube_color' => '#FFECEC',
-			'tiktok_color' => '#F2F2F2',
-			'fanpage_color' => '#E7F0FF',
-			'link_message_color' => '#E6FFFA',
-			'form_color' => '#00b894',
+			'phone_color' 		 => '#00B840',
+			'zalo_color' 		 => '#4D70FF',
+			'viber_color' 		 => '#CE48FE',
+			'whatsapp_color'	 => '#D7FED7',
+			'telegram_color'	 => '#E6F6FF',
+			'instagram_color' 	 => '#FFADC5',
+			'youtube_color'	 	 => '#FF4242',
+			'tiktok_color' 		 => '#202020',
+			'fanpage_color' 	 => '#1877F2',
+			'link_message_color' => '#D7FED7',
+			'form_color' 		 => '#00b894',
 		];
 
+		// Color fields
 		foreach ($color_fields as $key => $default) {
-			if (isset($input[$key])) {
+			if (array_key_exists($key, $input)) {
 				$output[$key] = sanitize_hex_color($input[$key]) ?: $default;
 			}
 		}
@@ -155,8 +171,13 @@ class HBC_Settings
 		// URL fields
 		$url_fields = ['telegram', 'instagram', 'youtube', 'tiktok', 'fanpage', 'link_message'];
 		foreach ($url_fields as $key) {
-			if (isset($input[$key])) {
-				$output[$key] = esc_url_raw(trim($input[$key]));
+			if (array_key_exists($key, $input)) {
+				$val = trim($input[$key]);
+				if ($val !== '') {
+					$output[$key] = esc_url_raw($val);
+				} else {
+					unset($output[$key]);
+				}
 			}
 		}
 
@@ -170,8 +191,6 @@ class HBC_Settings
 			}
 		}
 
-		error_log('HBC Sanitized Settings: ' . print_r($output, true));
-
 		return $output;
 	}
 
@@ -182,9 +201,6 @@ class HBC_Settings
 	public function settings_page_html()
 	{
 		$opts = get_option('hupuna_button_contact_settings', []);
-
-		error_log('HBC Options (settings page): ' . print_r($opts, true));
-
 		// CF7 forms
 		$cf7_forms = post_type_exists('wpcf7_contact_form')
 			? get_posts([
@@ -195,6 +211,63 @@ class HBC_Settings
 			])
 			: [];
 
-		include plugin_dir_path(__FILE__) . '../templates/setting-page.php';
+		// Active tab
+		$active_tab = $_GET['tab'] ?? 'button';
+		
+		// Services
+		$services = [
+			'zalo' => [
+				'label' 		=> __('Zalo', 'hupuna-button-contact'),
+				'placeholder' 	=> '+84987654321',
+				'default_color' => '#4D70FF',
+			],
+			'phone' => [
+				'label' 		=> __('Phone', 'hupuna-button-contact'),
+				'placeholder' 	=> '+84987654321',
+				'default_color' => '#00B840',
+			],
+			'telegram' => [
+				'label' 		=> __('Link Telegram', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Telegram',
+				'default_color' => '#E6F6FF',
+			],
+			'instagram' => [
+				'label' 		=> __('Link Instagram', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Instagram',
+				'default_color' => '#FFADC5',
+			],
+			'youtube' => [
+				'label' 		=> __('Link Youtube', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Youtube',
+				'default_color' => '#FF4242',
+			],
+			'tiktok' => [
+				'label' 		=> __('Link Tiktok', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Tiktok',
+				'default_color' => '#202020',
+			],
+			'fanpage' => [
+				'label' 		=> __('Link Fanpage', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Fanpage',
+				'default_color' => '#1877F2',
+			],
+			'link_message' => [
+				'label' 		=> __('Link Message', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Message',
+				'default_color' => '#D7FED7',
+			],
+			'viber' => [
+				'label' 		=> __('Viber', 'hupuna-button-contact'),
+				'placeholder'	=> '+84987654321',
+				'default_color' => '#CE48FE',
+			],
+			'whatsapp' => [
+				'label' 		=> __('Whatsapp', 'hupuna-button-contact'),
+				'placeholder' 	=> '+84987654321',
+				'default_color' => '#D7FED7',
+			],
+		];
+
+		include HUPUNA_BUTTON_CONTACT_PATH . 'templates/setting-page.php';
 	}
 }
