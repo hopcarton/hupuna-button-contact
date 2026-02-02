@@ -1,0 +1,153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hupuna Button Contact\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-31 07:32+0000\n"
+"PO-Revision-Date: 2026-01-31 07:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: Tiếng Việt\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9; php-8.2.12\n"
+"X-Domain: hupuna-button-contact"
+
+#: templates/setting-page.php:181
+msgid "-- Select a contact form --"
+msgstr "Chọn form liên hệ"
+
+#. Description of the plugin
+msgid ""
+"A professional contact button plugin for WordPress, including Hotline, Zalo, "
+"Telegram, and social media links."
+msgstr ""
+"Plugin nút liên hệ chuyên nghiệp cho WordPress, bao gồm Hotline, Zalo, "
+"Telegram và các mạng xã hội."
+
+#: templates/setting-page.php:92
+msgid "Bottom left"
+msgstr "Dưới bên trái"
+
+#: templates/setting-page.php:94
+msgid "Bottom right"
+msgstr "Dưới bên phải"
+
+#: templates/setting-page.php:66
+msgid "Button Contact"
+msgstr "Nút liên hệ"
+
+#: templates/setting-page.php:177
+msgid "Contact form (CF7)"
+msgstr "Form liên hệ"
+
+#: templates/setting-page.php:87
+msgid "Display position"
+msgstr "Vị trí hiển thị"
+
+#: templates/setting-page.php:145
+msgid "Eg: 0.8 - 0.9 - 1 - 1.2 (Default 1)"
+msgstr "Ví dụ: 0.8 - 0.9 - 1 - 1.2 (Mặc định 1)"
+
+#: templates/setting-page.php:111
+msgid "Hide on"
+msgstr "Ẩn trên"
+
+#. URI of the plugin
+msgid "https://github.com/hopcarton/hupuna-button-contact"
+msgstr "https://github.com/hopcarton/hupuna-button-contact"
+
+#. Author URI of the plugin
+msgid "https://hupuna.com/"
+msgstr "https://hupuna.com/"
+
+#. Author of the plugin
+msgid "Hupuna"
+msgstr "Hupuna"
+
+#. Name of the plugin
+msgid "Hupuna Button Contact"
+msgstr "Nút liên hệ Hupuna"
+
+#: templates/setting-page.php:23
+msgid "Instagram"
+msgstr "Instagram"
+
+#: inc/class-hbc-settings.php:167
+msgid "Invalid Contact Form selected"
+msgstr "Form liên hệ được chọn không hợp lệ"
+
+#: inc/class-hbc-settings.php:62
+msgid "Invalid phone number"
+msgstr "Số điện thoại không hợp lệ"
+
+#: inc/class-hbc-settings.php:85
+msgid "Invalid Viber number"
+msgstr "Số viber không hợp lệ"
+
+#: inc/class-hbc-settings.php:96
+msgid "Invalid Whatsapp number"
+msgstr "Số Whatsapp không hợp lệ"
+
+#: inc/class-hbc-settings.php:74
+msgid "Invalid Zalo number"
+msgstr "Số Zalo không hợp lệ"
+
+#: templates/setting-page.php:38
+msgid "Link Fanpage"
+msgstr "Link Fanpage"
+
+#: templates/setting-page.php:43
+msgid "Link Message"
+msgstr "Link nhắn tin"
+
+#: templates/setting-page.php:8
+msgid "Phone"
+msgstr "Số điện thoại"
+
+#: templates/setting-page.php:71
+msgid "Settings"
+msgstr "Cài đặt"
+
+#: templates/setting-page.php:135
+msgid "Size scale"
+msgstr "Tỷ lệ kích thước"
+
+#: inc/class-hbc-settings.php:121
+msgid "Size scale must be between 0.5 and 2"
+msgstr "Tỷ lệ kích thước phải nằm trong khoảng từ 0.5 đến 2"
+
+#: templates/setting-page.php:18
+msgid "Telegram"
+msgstr "Telegram"
+
+#: templates/setting-page.php:33
+msgid "Tiktok"
+msgstr "Tiktok"
+
+#: templates/setting-page.php:93
+msgid "Top left"
+msgstr "Trên bên trái"
+
+#: templates/setting-page.php:95
+msgid "Top right"
+msgstr "Trên bên phải"
+
+#: templates/setting-page.php:48
+msgid "Viber"
+msgstr "Viber"
+
+#: templates/setting-page.php:53
+msgid "Whatsapp"
+msgstr "Whatsapp"
+
+#: templates/setting-page.php:28
+msgid "Youtube"
+msgstr "Youtube"
+
+#: templates/setting-page.php:13
+msgid "Zalo"
+msgstr ""
+"Zalo\n"
