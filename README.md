@@ -1,7 +1,11 @@
 # Hupuna Button Contact
 
+<<<<<<< HEAD
 A base WordPress plugin for floating contact buttons (Hotline, Zalo, Telegram, Whatsapp, Viber, Tiktok, Instagram, Youtube, Fanpage, etc.).  
 Designed for learning, internal use, and internship projects.
+=======
+Base plugin for contact buttons (Hotline, Zalo, Tiktok, etc.)
+>>>>>>> b1adb1a3b583e935b336463fb4273c1ee22919a5
 
 ---
 
