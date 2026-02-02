@@ -23,7 +23,7 @@ Dùng cho học tập, nội bộ và dự án thực tập.
 
 🔍 Zoom to/nhỏ icon
 
-## 🗂 Project Structure
+🗂 Project Structure
 
 hupuna-button-contact/
 ├── assets/
@@ -44,7 +44,7 @@ hupuna-button-contact/
 ├── readme.txt                   # WordPress.org readme
 └── README.md                    # GitHub readme
 
-## 📦 Cài đặt
+📦 Cài đặt
 
 Upload plugin vào:
 
