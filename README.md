@@ -54,7 +54,7 @@ uninstall.php
 🧑‍💻 Môi trường phát triển
 WP 5.8+
 
-PHP 7.2+
+PHP 8.0+
 
 OOP, Settings API, Template render
 

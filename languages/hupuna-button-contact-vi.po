@@ -96,8 +96,8 @@ msgid "Invalid Zalo number"
 msgstr "Số Zalo không hợp lệ"
 
 #: templates/setting-page.php:38
-msgid "Link Fanpage"
-msgstr "Link Fanpage"
+msgid "Link Facebook"
+msgstr "Link Facebook"
 
 #: templates/setting-page.php:43
 msgid "Link Message"

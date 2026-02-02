@@ -95,7 +95,7 @@ msgid "Invalid Zalo number"
 msgstr ""
 
 #: templates/setting-page.php:38
-msgid "Link Fanpage"
+msgid "Link Facebook"
 msgstr ""
 
 #: templates/setting-page.php:43

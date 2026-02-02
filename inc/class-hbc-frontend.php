@@ -15,15 +15,6 @@ if (!class_exists('HBC_Frontend', false)) {
 		public function __construct()
 		{
 			add_action('wp_footer', array($this, 'render_button'));
-			add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
-		}
-
-		/**
-		 * Enqueue assets
-		 */
-		public function enqueue_assets()
-		{
-
 		}
 
 		/**

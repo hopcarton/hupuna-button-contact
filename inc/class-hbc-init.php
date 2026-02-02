@@ -16,7 +16,7 @@ function hbc_load_textdomain()
     );
 }
 
-// Thêm link Cài đặt trong trang plugin
+// Add settings link in plugins page
 function hbc_add_settings_link($links)
 {
     return array_merge([
@@ -27,11 +27,11 @@ function hbc_add_settings_link($links)
 }
 
 
-// Load common assets js và css cho cả frontend và settings page
+// Load common assets js and css for both admin and frontend
 function hbc_enqueue_common_assets($hook = null)
 {
 
-    // Nếu là admin thì chỉ load ở trang settings plugin
+    // if admin page but not our settings page, return
     if (is_admin() && $hook !== 'toplevel_page_hupuna-button-contact') {
         return;
     }

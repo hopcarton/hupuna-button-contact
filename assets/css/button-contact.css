@@ -1,17 +1,21 @@
-/* Container cố định */
+/* Container */
 .hbc-float-container {
     position: fixed;
     display: flex;
     flex-direction: column;
     gap: 25px;
     z-index: 9999;
+    transition: transform .2s ease;
+    max-width: 90vw;
+    max-height: 90vh;
+    will-change: transform;
 }
 
 /* ===== POSITIONS ===== */
-.hbc-float-container.pos-bottom-left { left: 20px; bottom: 40px; }
-.hbc-float-container.pos-bottom-right { right: 20px; bottom: 40px; }
-.hbc-float-container.pos-top-left { left: 20px; top: 60px; }
-.hbc-float-container.pos-top-right { right: 20px; top: 60px; }
+.hbc-float-container.pos-bottom-left { left: 20px; bottom: 40px; transform-origin: bottom left; }
+.hbc-float-container.pos-bottom-right { right: 20px; bottom: 40px; transform-origin: bottom right; }
+.hbc-float-container.pos-top-left { left: 20px; top: 60px; transform-origin: top left; }
+.hbc-float-container.pos-top-right { right: 20px; top: 60px; transform-origin: top right; }
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -21,7 +25,7 @@
     }
 }
 
-/* Nút chung */
+/* Button shared */
 .hbc-float-btn {
     position: relative;
     width: 50px;
@@ -39,7 +43,7 @@
     overflow: visible;
 }
 
-/* Vòng sóng */
+/* ware area */
 .hbc-float-btn::before {
     content: "";
     position: absolute;

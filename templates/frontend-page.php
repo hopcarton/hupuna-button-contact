@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 
 <div class="hbc-float-container pos-<?php echo esc_attr($position); ?> <?php echo esc_attr($hide_class); ?>"
-    style="transform: scale(<?php echo esc_attr($sizeScale); ?>); transform-origin: bottom left;">
+    style="transform: scale(<?php echo esc_attr($sizeScale); ?>);">
     <?php
     foreach ($buttons as $btn):
         if (empty($btn['show'])) continue;

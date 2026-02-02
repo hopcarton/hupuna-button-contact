@@ -58,14 +58,17 @@ class HBC_Settings
 			$phoneRaw = trim($input['phone']);
 
 			if ($phoneRaw !== '') {
-				if (!preg_match('/^\+?\d{9,15}$/', $phoneRaw)) {
+
+				$phoneClean = preg_replace('/(?!^\+)[^\d]/', '', $phoneRaw);
+
+				if (!preg_match('/^\+?\d{9,15}$/', $phoneClean)) {
 					add_settings_error(
 						'hupuna_button_contact_settings',
 						'invalid_phone',
 						__('Invalid phone number', 'hupuna-button-contact')
 					);
 				} else {
-					$output['phone'] = preg_replace('/[^\d]/', '', $phoneRaw);
+					$output['phone'] = $phoneClean;
 				}
 			} else {
 				unset($output['phone']);
@@ -77,10 +80,13 @@ class HBC_Settings
 			$zaloRaw = trim($input['zalo']);
 
 			if ($zaloRaw !== '') {
-				if (!preg_match('/^\+?\d{9,15}$/', $zaloRaw)) {
+				
+				$zaloClean = preg_replace('/(?!^\+)[^\d]/', '', $zaloRaw);
+
+				if (!preg_match('/^\+?\d{9,15}$/', $zaloClean)) {
 					add_settings_error('hupuna_button_contact_settings', 'invalid_zalo', __('Invalid Zalo number', 'hupuna-button-contact'));
 				} else {
-					$output['zalo'] = preg_replace('/[^\d]/', '', $zaloRaw);
+					$output['zalo'] = $zaloClean;
 				}
 			} else {
 				unset($output['zalo']);
@@ -92,10 +98,13 @@ class HBC_Settings
 			$viberRaw = trim($input['viber']);
 
 			if ($viberRaw !== '') {
-				if (!preg_match('/^\+?\d{9,15}$/', $viberRaw)) {
+
+				$viberClean = preg_replace('/(?!^\+)[^\d]/', '', $viberRaw);
+
+				if (!preg_match('/^\+?\d{9,15}$/', $viberClean)) {
 					add_settings_error('hupuna_button_contact_settings', 'invalid_viber', __('Invalid Viber number', 'hupuna-button-contact'));
 				} else {
-					$output['viber'] = preg_replace('/[^\d]/', '', $viberRaw);
+					$output['viber'] = $viberClean;
 				}
 			} else {
 				unset($output['viber']);
@@ -107,10 +116,13 @@ class HBC_Settings
 			$whatsappRaw = trim($input['whatsapp']);
 
 			if ($whatsappRaw !== '') {
-				if (!preg_match('/^\+?\d{9,15}$/', $whatsappRaw)) {
+
+				$whatsappClean = preg_replace('/(?!^\+)[^\d]/', '', $whatsappRaw);
+
+				if (!preg_match('/^\+?\d{9,15}$/', $whatsappClean)) {
 					add_settings_error('hupuna_button_contact_settings', 'invalid_whatsapp', __('Invalid Whatsapp number', 'hupuna-button-contact'));
 				} else {
-					$output['whatsapp'] = preg_replace('/[^\d]/', '', $whatsappRaw);
+					$output['whatsapp'] = $whatsappClean;
 				}
 			} else {
 				unset($output['whatsapp']);
@@ -247,8 +259,8 @@ class HBC_Settings
 				'default_color' => '#202020',
 			],
 			'fanpage' => [
-				'label' 		=> __('Link Fanpage', 'hupuna-button-contact'),
-				'placeholder' 	=> 'Link Fanpage',
+				'label' 		=> __('Link Facebook', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Facebook',
 				'default_color' => '#1877F2',
 			],
 			'link_message' => [
