@@ -151,7 +151,91 @@ msgstr "Cài đặt"
 msgid "Link Youtube"
 msgstr "Link Youtube"
 
-#: templates/setting-page.php:13
+#: templates/setting-page.php:150
 msgid "Zalo"
-msgstr ""
-"Zalo\n"
+msgstr "Zalo"
+
+#: inc/class-hbc-frontend.php:35
+#: templates/setting-page.php:126
+msgid "CONTACT"
+msgstr "LIÊN HỆ"
+
+#: templates/setting-page.php:119
+msgid "Contact Form Button"
+msgstr "Nút Contact Form"
+
+#: templates/setting-page.php:122
+msgid "Button Text"
+msgstr "Chữ trên nút"
+
+#: templates/setting-page.php:128
+msgid "e.g: GET A QUOTE"
+msgstr "Ví dụ: NHẬN BÁO GIÁ"
+
+#: templates/setting-page.php:133
+msgid "Contact Form Popup"
+msgstr "Popup Contact Form"
+
+#: templates/setting-page.php:157
+msgid "Form Template"
+msgstr "Mẫu giao diện"
+
+#: templates/setting-page.php:160
+msgid "Default CF7"
+msgstr "Mặc định CF7"
+
+#: templates/setting-page.php:161
+msgid "Template 1"
+msgstr "Mẫu 1"
+
+#: templates/setting-page.php:162
+msgid "Template 2"
+msgstr "Mẫu 2"
+
+#: templates/setting-page.php:167
+msgid "Template Logo URL"
+msgstr "Đường dẫn Logo"
+
+#: templates/setting-page.php:173
+msgid "Template Heading"
+msgstr "Tiêu đề mẫu"
+
+#: templates/setting-page.php:179
+msgid "Template Subheading"
+msgstr "Tiêu đề phụ mẫu"
+
+#: templates/setting-page.php:185
+msgid "Template Description"
+msgstr "Mô tả mẫu"
+
+#: templates/frontend-page.php:32
+msgid "Connect with us"
+msgstr "Kết nối với chúng tôi"
+
+#: templates/frontend-page.php:41
+msgid "Chat now"
+msgstr "Trò chuyện ngay"
+
+#: templates/frontend-page.php:67
+msgid "CONSULTATION CONTACT"
+msgstr "LIÊN HỆ TƯ VẤN"
+
+#: templates/frontend-page.php:68
+msgid "Leave your information, we will support answering your questions immediately."
+msgstr "Để lại thông tin, chúng tôi sẽ hỗ trợ giải đáp thắc mắc của bạn ngay lập tức."
+
+#: templates/frontend-page.php:72
+msgid "Hotline:"
+msgstr "Hotline:"
+
+#: templates/frontend-page.php:75
+msgid "Zalo:"
+msgstr "Zalo:"
+
+#: templates/frontend-page.php:78
+msgid "Email:"
+msgstr "Email:"
+
+#: templates/setting-page.php:187
+msgid "If you like our products, please buy now."
+msgstr "Nếu bạn thích sản phẩm của chúng tôi, hãy mua ngay nhé."

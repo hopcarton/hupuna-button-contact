@@ -156,13 +156,31 @@ button.hbc-float-btn {
     background-size: 30px;
 }
 
+/* Text Button Support */
+.hbc-btn-has-text::after {
+    display: none !important;
+}
+
+.hbc-btn-text {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    padding: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 2;
+}
+
 /* Popup form */
 .hbc-popup-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .7);
     display: none;
     z-index: 99999;
+    backdrop-filter: blur(5px);
+    padding: 20px;
 }
 
 .hbc-popup-overlay.active {
@@ -173,11 +191,291 @@ button.hbc-float-btn {
 
 .hbc-popup {
     background: #fff;
-    width: 90%;
+    width: 100%;
     max-width: 500px;
-    padding: 24px;
-    border-radius: 12px;
+    padding: 0;
+    border-radius: 16px;
     position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: popupFadeIn 0.3s ease-out;
+    /* Removed overflow: hidden to allow close button to hang outside */
+}
+
+.hbc-popup-close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    line-height: 1;
+    padding: 0;
+    transition: all 0.2s;
+}
+
+.hbc-popup-close:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Template 1: Premium Blue/White */
+.hbc-form-template_1 {
+    max-width: 850px;
+}
+
+.hbc-tpl-1-wrapper {
+    display: flex;
+    min-height: 450px;
+}
+
+.hbc-tpl-1-left {
+    flex: 6;
+    padding: 40px;
+}
+
+.hbc-tpl-1-right {
+    flex: 4;
+    background: #f8fafc;
+    padding: 40px;
+    border-left: 1px solid #edf2f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hbc-tpl-1-right::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-left: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.hbc-tpl-logo {
+    max-width: 120px;
+    margin-bottom: 25px;
+}
+
+.hbc-tpl-heading {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.hbc-tpl-subheading {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: var(--primary-color);
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.hbc-tpl-desc {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hbc-tpl-contact-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hbc-tpl-btn-zalo,
+.hbc-tpl-btn-phone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hbc-tpl-btn-zalo {
+    background: #0068ff;
+    color: #fff;
+}
+
+.hbc-tpl-btn-zalo:hover {
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 104, 255, 0.3);
+}
+
+.hbc-tpl-btn-zalo img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.hbc-tpl-btn-zalo:hover img {
+    transform: scale(1.1);
+}
+
+.hbc-tpl-btn-phone {
+    background: #e53e3e;
+    color: #fff;
+}
+
+.hbc-tpl-btn-phone:hover {
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(229, 62, 62, 0.3);
+}
+
+.hbc-tpl-btn-phone i {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.hbc-tpl-btn-phone:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Template 2: Gray Sidebar */
+.hbc-form-template_2 {
+    max-width: 800px;
+}
+
+.hbc-tpl-2-wrapper {
+    display: flex;
+}
+
+.hbc-tpl-2-sidebar {
+    flex: 4;
+    background: #f3f4f6;
+    padding: 40px;
+}
+
+.hbc-tpl-2-main {
+    flex: 6;
+    padding: 40px;
+}
+
+.hbc-tpl-2-sidebar .hbc-tpl-heading {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hbc-tpl-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+}
+
+.hbc-tpl-contact-list li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Default popup padding if no template used */
+.hbc-form-default {
+    padding: 30px;
+}
+
+/* CF7 Common styles in popup */
+.hbc-popup .wpcf7-form-control-wrap {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hbc-popup input:not([type="submit"]),
+.hbc-popup textarea,
+.hbc-popup select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.hbc-popup input:focus,
+.hbc-popup textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.hbc-popup input[type="submit"] {
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Templates */
+@media (max-width: 768px) {
+
+    .hbc-tpl-1-wrapper,
+    .hbc-tpl-2-wrapper {
+        flex-direction: column;
+    }
+
+    .hbc-tpl-1-right::before {
+        display: none;
+    }
+
+    .hbc-tpl-1-left,
+    .hbc-tpl-1-right,
+    .hbc-tpl-2-sidebar,
+    .hbc-tpl-2-main {
+        padding: 25px;
+    }
+
+    /* Mobile Height Optimization */
+    .hbc-popup {
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hbc-popup-overlay {
+        padding: 15px;
+        align-items: center;
+        /* Center the 80% height popup */
+    }
 }
 
 /* Hide on devices */

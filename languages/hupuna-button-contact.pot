@@ -146,6 +146,87 @@ msgstr ""
 msgid "Link Youtube"
 msgstr ""
 
-#: templates/setting-page.php:13
+#: templates/setting-page.php:150
 msgid "Zalo"
+msgstr ""
+
+#: inc/class-hbc-frontend.php:35
+#: templates/setting-page.php:126
+msgid "CONTACT"
+msgstr ""
+
+#: templates/setting-page.php:119
+msgid "Contact Form Button"
+msgstr ""
+
+#: templates/setting-page.php:122
+msgid "Button Text"
+msgstr ""
+
+#: templates/setting-page.php:128
+msgid "e.g: GET A QUOTE"
+msgstr ""
+
+#: templates/setting-page.php:133
+msgid "Contact Form Popup"
+msgstr ""
+
+#: templates/setting-page.php:157
+msgid "Form Template"
+msgstr ""
+
+#: templates/setting-page.php:160
+msgid "Default CF7"
+msgstr ""
+
+#: templates/setting-page.php:161
+msgid "Template 1"
+msgstr ""
+
+#: templates/setting-page.php:162
+msgid "Template 2"
+msgstr ""
+
+#: templates/setting-page.php:167
+msgid "Template Logo URL"
+msgstr ""
+
+#: templates/setting-page.php:173
+msgid "Template Heading"
+msgstr ""
+
+#: templates/setting-page.php:179
+msgid "Template Subheading"
+msgstr ""
+
+#: templates/setting-page.php:185
+msgid "Template Description"
+msgstr ""
+
+#: templates/frontend-page.php:32
+msgid "Connect with us"
+msgstr ""
+
+#: templates/frontend-page.php:41
+msgid "Chat now"
+msgstr ""
+
+#: templates/frontend-page.php:67
+msgid "CONSULTATION CONTACT"
+msgstr ""
+
+#: templates/frontend-page.php:68
+msgid "Leave your information, we will support answering your questions immediately."
+msgstr ""
+
+#: templates/frontend-page.php:72
+msgid "Hotline:"
+msgstr ""
+
+#: templates/frontend-page.php:75
+msgid "Zalo:"
+msgstr ""
+
+#: templates/frontend-page.php:78
+msgid "Email:"
 msgstr ""

@@ -129,6 +129,29 @@ class HBC_Settings
 			}
 		}
 
+		// Contact button type
+		if (isset($input['contact_button_type'])) {
+			$output['contact_button_type'] = sanitize_text_field($input['contact_button_type']);
+		}
+
+		// Contact button text
+		if (isset($input['contact_button_text'])) {
+			$output['contact_button_text'] = sanitize_text_field($input['contact_button_text']);
+		}
+
+		// Form template
+		if (isset($input['form_template'])) {
+			$output['form_template'] = sanitize_text_field($input['form_template']);
+		}
+
+		// Template content
+		$template_fields = ['form_logo', 'form_heading', 'form_subheading', 'form_description'];
+		foreach ($template_fields as $f) {
+			if (isset($input[$f])) {
+				$output[$f] = wp_kses_post($input[$f]);
+			}
+		}
+
 		return $output;
 	}
 

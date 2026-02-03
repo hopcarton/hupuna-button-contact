@@ -77,6 +77,7 @@ if ( !class_exists( 'HBC', false ) ) {
 		 * Enqueue frontend assets
 		 */
 		public function enqueue_frontend_assets() {
+			wp_enqueue_style( 'dashicons' );
 			wp_enqueue_style(
 				'hbc-frontend',
 				HUPUNA_BUTTON_CONTACT_URL . 'assets/css/button-contact.css',

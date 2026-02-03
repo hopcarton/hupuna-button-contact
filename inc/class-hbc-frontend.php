@@ -31,6 +31,18 @@ if (!class_exists('HBC_Frontend', false)) {
 			$sizeScale 	      = isset($opts['size_scale']) ? floatval($opts['size_scale']) : 1;
 			$hide_on 	      = $opts['hide_on'] ?? [];
 
+			$contact_button_type = 'text';
+			$contact_button_text = $opts['contact_button_text'] ?? __('CONTACT', 'hupuna-button-contact');
+			$form_template       = $opts['form_template'] ?? 'default';
+
+			// Template data
+			$tpl_data = [
+				'logo'        => $opts['form_logo'] ?? '',
+				'heading'     => $opts['form_heading'] ?? '',
+				'subheading'  => $opts['form_subheading'] ?? '',
+				'description' => $opts['form_description'] ?? '',
+			];
+
 			$buttons = [];
 			$has_active_btn = false;
 

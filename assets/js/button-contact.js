@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupOverlay.classList.remove('active');
             }
         });
+
+        // Close button
+        const closeBtn = popupOverlay.querySelector('.hbc-popup-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                popupOverlay.classList.remove('active');
+            });
+        }
     }
 
     // CF7 sent event to close popup (Vanilla JS)

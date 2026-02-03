@@ -4,7 +4,7 @@ Tags: contact, button, hotline, zalo, messenger, email, tiktok, telegram
 Requires at least: 5.8
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,12 +25,12 @@ Hupuna Button Contact helps you add a floating contact button system to your web
 
 **Main features:**
 
-* **Floating buttons**: Always visible for easy access on frontend.
-* **Customization**: Custom colors for each service to match your brand.
-* **Flexible Position**: Top/Bottom – Left/Right corners.
-* **Responsive Control**: Hide/Show buttons specifically on Mobile / Tablet / Desktop.
-* **Visual Effects**: Size scale (zoom in / zoom out) to grab attention.
-* **Integration**: Seamless integration with Contact Form 7.
+* **Text-Based Buttons**: Support circular buttons with custom text labels.
+* **Premium Templates**: 3 visual layouts for Contact Form 7 popups (Default, Template 1, Template 2).
+* **Smart Visibility**: Template settings fields automatically hide when using default mode.
+* **Global Theming**: Uses `--primary-color` CSS variable from your theme for seamless integration.
+* **Mobile Ready**: Optimized popup height (80vh) and internal scrolling for small screens.
+* **Multilingual**: Full English / Vietnamese translation support.
 * **Performance**: Lightweight, fast, and no external dependencies.
 
 **About Hupuna Group**
@@ -52,19 +52,20 @@ Website: https://hupuna.com/hop-carton/
 2.  Activate the plugin through the 'Plugins' menu in WordPress.
 3.  Go to **Button Contact** menu to configure your buttons.
 
-== Frequently Asked Questions ==
+== Changelog ==
 
-= Where is plugin data stored? =
-All settings are stored in the `wp_options` table under the option name `hupuna_button_contact_settings`.
+= 1.1.0 =
+* NEW: Added circular text-based button support for Contact Form.
+* NEW: 2 Premium popup templates for Contact Form 7.
+* NEW: Integrated global `--primary-color` theme support.
+* NEW: Full English/Vietnamese translation.
+* NEW: Optimized mobile layout with 80% height limit and scrolling.
+* ENHANCEMENT: Automated setting fields visibility (Smart Settings).
+* ENHANCEMENT: Premium hover animations for Zalo and Phone buttons.
+* ENHANCEMENT: Simplified popup close button.
 
-= Does this plugin require Contact Form 7? =
-No. CF7 is optional. You can use the plugin for direct links (Phone, Zalo, Messenger...) without installing Contact Form 7.
-
-= Will plugin data be removed when deleting plugin? =
-Yes, if `uninstall.php` exists (which it does), plugin data will be removed automatically when you delete the plugin to keep your database clean.
-
-= Can I hide buttons on mobile or desktop? =
-Yes. You can configure visibility for Mobile, Tablet, or Desktop specifically in the settings page.
+= 1.0.0 =
+* Initial release.
 
 == Screenshots ==
 
