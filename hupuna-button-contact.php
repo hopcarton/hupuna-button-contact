@@ -26,3 +26,6 @@ function hupuna_button_contact_init() {
 	HBC::get_instance();
 }
 add_action( 'plugins_loaded', 'hupuna_button_contact_init' );
+
+// Disable CF7 autop (p tags around inputs)
+add_filter('wpcf7_autop_or_not', '__return_false');

@@ -198,13 +198,14 @@ button.hbc-float-btn {
     position: relative;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     animation: popupFadeIn 0.3s ease-out;
-    /* Removed overflow: hidden to allow close button to hang outside */
+    overflow: hidden;
+    /* Ensure content follows popup border radius */
 }
 
 .hbc-popup-close {
     position: absolute;
-    right: -15px;
-    top: -15px;
+    right: 10px;
+    top: 10px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -271,14 +272,14 @@ button.hbc-float-btn {
 .hbc-tpl-heading {
     margin: 0 0 5px 0;
     font-size: 24px;
-    color: var(--primary-color);
+    color: var(--primary-color, #0068ff);
     font-weight: 700;
 }
 
 .hbc-tpl-subheading {
     margin: 0 0 20px 0;
     font-size: 20px;
-    color: var(--primary-color);
+    color: var(--primary-color, #0068ff);
     opacity: 0.8;
     font-weight: 600;
 }
@@ -369,12 +370,30 @@ button.hbc-float-btn {
 .hbc-tpl-2-main {
     flex: 6;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    /* Stretch to full width for alignment control */
+}
+
+.hbc-tpl-2-main .wpcf7 {
+    width: 100%;
+}
+
+.hbc-tpl-2-main .wpcf7-form-control.wpcf7-submit {
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+.hbc-tpl-2-main .wpcf7-form-control-wrap {
+    text-align: left;
 }
 
 .hbc-tpl-2-sidebar .hbc-tpl-heading {
     font-size: 26px;
     text-transform: uppercase;
-    color: var(--primary-color);
+    color: var(--primary-color, #0068ff);
     margin-bottom: 15px;
     line-height: 1.2;
 }
@@ -416,13 +435,13 @@ button.hbc-float-btn {
 
 .hbc-popup input:focus,
 .hbc-popup textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 20%, transparent);
+    border-color: var(--primary-color, #0068ff);
+    box-shadow: 0 0 0 3px rgba(0, 104, 255, 0.2);
 }
 
 .hbc-popup input[type="submit"] {
     width: 100%;
-    background: var(--primary-color);
+    background: var(--primary-color, #0068ff);
     color: #fff;
     border: none;
     padding: 15px;

@@ -85,6 +85,12 @@ if ( !class_exists( 'HBC', false ) ) {
 				HUPUNA_BUTTON_CONTACT_VERSION
 			);
 
+			// Inject dynamic colors
+			$opts = get_option('hupuna_button_contact_settings', []);
+			$form_color = $opts['form_color'] ?? '#0068ff'; 
+			$custom_css = ":root { --primary-color: {$form_color}; }";
+			wp_add_inline_style('hbc-frontend', $custom_css);
+
 			wp_enqueue_script(
 				'hbc-frontend',
 				HUPUNA_BUTTON_CONTACT_URL . 'assets/js/button-contact.js',
