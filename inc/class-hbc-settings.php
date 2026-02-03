@@ -93,7 +93,7 @@ class HBC_Settings
 
 		// Size scale
 		if (isset($input['size_scale'])) {
-			$scale = floatval(value: $input['size_scale']);
+			$scale = floatval($input['size_scale']);
 
 			if ($scale < 0.5 || $scale > 2) {
 				add_settings_error(

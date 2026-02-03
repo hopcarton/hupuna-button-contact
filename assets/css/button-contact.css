@@ -137,7 +137,7 @@ button.hbc-float-btn {
 }
 
 .hbc-messenger-btn::after {
-    background-image: url('../images/messenge.png');
+    background-image: url('../images/messenger.png');
     background-size: 30px;
 }
 
