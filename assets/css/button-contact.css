@@ -12,13 +12,33 @@
 }
 
 /* ===== POSITIONS ===== */
-.hbc-float-container.pos-bottom-left { left: 20px; bottom: 40px; transform-origin: bottom left; }
-.hbc-float-container.pos-bottom-right { right: 20px; bottom: 40px; transform-origin: bottom right; }
-.hbc-float-container.pos-top-left { left: 20px; top: 60px; transform-origin: top left; }
-.hbc-float-container.pos-top-right { right: 20px; top: 60px; transform-origin: top right; }
+.hbc-float-container.pos-bottom-left {
+    left: 20px;
+    bottom: 40px;
+    transform-origin: bottom left;
+}
+
+.hbc-float-container.pos-bottom-right {
+    right: 20px;
+    bottom: 40px;
+    transform-origin: bottom right;
+}
+
+.hbc-float-container.pos-top-left {
+    left: 20px;
+    top: 60px;
+    transform-origin: top left;
+}
+
+.hbc-float-container.pos-top-right {
+    right: 20px;
+    top: 60px;
+    transform-origin: top right;
+}
 
 /* Mobile */
 @media (max-width: 768px) {
+
     .hbc-float-container.pos-bottom-left,
     .hbc-float-container.pos-bottom-right {
         bottom: 90px;
@@ -30,6 +50,8 @@
     position: relative;
     width: 50px;
     height: 50px;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -37,7 +59,7 @@
     text-decoration: none;
     box-shadow:
         0 0 0 8px color-mix(in srgb, currentColor 35%, transparent),
-        0 6px 16px rgba(0,0,0,0.25);
+        0 6px 16px rgba(0, 0, 0, 0.25);
 
     animation: pulseZoom 1.2s infinite;
     overflow: visible;
@@ -49,7 +71,7 @@
     position: absolute;
     inset: -8px;
     border-radius: 50%;
-    background: color-mix(in srgb, currentColor 35%, transparent);;
+    background: color-mix(in srgb, currentColor 35%, transparent);
     opacity: 0.35;
     animation: ripple 1.2s infinite;
 }
@@ -74,23 +96,71 @@ button.hbc-float-btn {
 }
 
 /* ICON */
-.hbc-call-btn::after { background-image: url('../images/phone.png'); background-size: 30px; }
-.hbc-zalo-btn::after { background-image: url('../images/zalo.png'); background-size: 30px; }
-.hbc-contact-btn::after { background-image: url('../images/mail.png'); background-size: 30px; }
-.hbc-telegram-btn::after { background-image: url('../images/telegram.png'); background-size: 30px; }
-.hbc-instagram-btn::after { background-image: url('../images/instagram.png'); background-size: 30px; }
-.hbc-youtube-btn::after { background-image: url('../images/youtube.png'); background-size: 30px; }
-.hbc-tiktok-btn::after { background-image: url('../images/tiktok.png'); background-size: 30px; }
-.hbc-fanpage-btn::after { background-image: url('../images/facebook.png'); background-size: 30px; }
-.hbc-link-message-btn::after { background-image: url('../images/message.png'); background-size: 30px; }
-.hbc-viber-btn::after { background-image: url('../images/viber.png'); background-size: 30px; }
-.hbc-whatsapp-btn::after { background-image: url('../images/whatsapp.png'); background-size: 30px; }
+.hbc-phone-btn::after {
+    background-image: url('../images/phone.png');
+    background-size: 30px;
+}
+
+.hbc-zalo-btn::after {
+    background-image: url('../images/zalo.png');
+    background-size: 30px;
+}
+
+.hbc-contact-btn::after {
+    background-image: url('../images/mail.png');
+    background-size: 30px;
+}
+
+.hbc-telegram-btn::after {
+    background-image: url('../images/telegram.png');
+    background-size: 30px;
+}
+
+.hbc-instagram-btn::after {
+    background-image: url('../images/instagram.png');
+    background-size: 30px;
+}
+
+.hbc-youtube-btn::after {
+    background-image: url('../images/youtube.png');
+    background-size: 30px;
+}
+
+.hbc-tiktok-btn::after {
+    background-image: url('../images/tiktok.png');
+    background-size: 30px;
+}
+
+.hbc-fanpage-btn::after {
+    background-image: url('../images/facebook.png');
+    background-size: 30px;
+}
+
+.hbc-messenger-btn::after {
+    background-image: url('../images/messenge.png');
+    background-size: 30px;
+}
+
+.hbc-email-btn::after {
+    background-image: url('../images/mail.png');
+    background-size: 30px;
+}
+
+.hbc-viber-btn::after {
+    background-image: url('../images/viber.png');
+    background-size: 30px;
+}
+
+.hbc-whatsapp-btn::after {
+    background-image: url('../images/whatsapp.png');
+    background-size: 30px;
+}
 
 /* Popup form */
 .hbc-popup-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     display: none;
     z-index: 99999;
 }
@@ -114,25 +184,39 @@ button.hbc-float-btn {
 
 /* Hide on Desktop */
 @media (min-width: 1025px) {
-    .hbc-hide-desktop { display: none !important; }
+    .hbc-hide-desktop {
+        display: none !important;
+    }
 }
 
 /* Hide on Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .hbc-hide-tablet { display: none !important; }
+    .hbc-hide-tablet {
+        display: none !important;
+    }
 }
 
 /* Hide on Mobile */
 @media (max-width: 767px) {
-    .hbc-hide-mobile { display: none !important; }
+    .hbc-hide-mobile {
+        display: none !important;
+    }
 }
 
 
 /* Animations */
 @keyframes pulseZoom {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes ripple {
@@ -140,6 +224,7 @@ button.hbc-float-btn {
         transform: scale(0.9);
         opacity: 0.6;
     }
+
     100% {
         transform: scale(1.6);
         opacity: 0;
@@ -147,16 +232,33 @@ button.hbc-float-btn {
 }
 
 @keyframes iconShake {
-    0%,100% { transform: rotate(0); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-10deg); }
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
 }
 
 /* Mobile size */
+/* Mobile size */
 @media(max-width: 768px) {
     .hbc-float-btn {
-        width: 48px;
-        height: 48px;
+        width: 45px;
+        height: 45px;
+        box-shadow:
+            0 0 0 6px color-mix(in srgb, currentColor 35%, transparent),
+            0 4px 12px rgba(0, 0, 0, 0.2);
     }
 }

@@ -48,84 +48,38 @@ class HBC_Settings
 		$old 		  = get_option('hupuna_button_contact_settings', []);
 		$output 	  = is_array($old) ? $old : [];
 
-		$phoneRaw 	  = trim($input['phone'] ?? '');
-		$zaloRaw 	  = trim($input['zalo'] ?? '');
-		$viberRaw 	  = trim($input['viber'] ?? '');
-		$whatsappRaw  = trim($input['whatsapp'] ?? '');
+		$services = self::get_services();
 
-		// Phone
-		if (isset($input['phone'])) {
-			$phoneRaw = trim($input['phone']);
-
-			if ($phoneRaw !== '') {
-
-				$phoneClean = preg_replace('/(?!^\+)[^\d]/', '', $phoneRaw);
-
-				if (!preg_match('/^\+?\d{9,15}$/', $phoneClean)) {
-					add_settings_error(
-						'hupuna_button_contact_settings',
-						'invalid_phone',
-						__('Invalid phone number', 'hupuna-button-contact')
-					);
+		foreach ($services as $key => $config) {
+			// URL/Phone Sanitization
+			if (isset($input[$key])) {
+				$val = trim($input[$key]);
+				if ($val === '') {
+					unset($output[$key]);
 				} else {
-					$output['phone'] = $phoneClean;
+					if ($config['type'] === 'phone') {
+						$clean = preg_replace('/(?!^\+)[^\d]/', '', $val);
+						if (!preg_match('/^\+?\d{9,15}$/', $clean)) {
+							add_settings_error(
+								'hupuna_button_contact_settings',
+								'invalid_' . $key,
+								sprintf(__('Invalid %s number', 'hupuna-button-contact'), $config['label'])
+							);
+						} else {
+							$output[$key] = $clean;
+						}
+					} elseif ($config['type'] === 'email') {
+						$output[$key] = sanitize_email($val);
+					} else {
+						$output[$key] = esc_url_raw($val);
+					}
 				}
-			} else {
-				unset($output['phone']);
 			}
-		}
 
-		// Zalo
-		if (isset($input['zalo'])) {
-			$zaloRaw = trim($input['zalo']);
-
-			if ($zaloRaw !== '') {
-				
-				$zaloClean = preg_replace('/(?!^\+)[^\d]/', '', $zaloRaw);
-
-				if (!preg_match('/^\+?\d{9,15}$/', $zaloClean)) {
-					add_settings_error('hupuna_button_contact_settings', 'invalid_zalo', __('Invalid Zalo number', 'hupuna-button-contact'));
-				} else {
-					$output['zalo'] = $zaloClean;
-				}
-			} else {
-				unset($output['zalo']);
-			}
-		}
-
-		// Viber
-		if (isset($input['viber'])) {
-			$viberRaw = trim($input['viber']);
-
-			if ($viberRaw !== '') {
-
-				$viberClean = preg_replace('/(?!^\+)[^\d]/', '', $viberRaw);
-
-				if (!preg_match('/^\+?\d{9,15}$/', $viberClean)) {
-					add_settings_error('hupuna_button_contact_settings', 'invalid_viber', __('Invalid Viber number', 'hupuna-button-contact'));
-				} else {
-					$output['viber'] = $viberClean;
-				}
-			} else {
-				unset($output['viber']);
-			}
-		}
-
-		// Whatsapp
-		if (isset($input['whatsapp'])) {
-			$whatsappRaw = trim($input['whatsapp']);
-
-			if ($whatsappRaw !== '') {
-
-				$whatsappClean = preg_replace('/(?!^\+)[^\d]/', '', $whatsappRaw);
-
-				if (!preg_match('/^\+?\d{9,15}$/', $whatsappClean)) {
-					add_settings_error('hupuna_button_contact_settings', 'invalid_whatsapp', __('Invalid Whatsapp number', 'hupuna-button-contact'));
-				} else {
-					$output['whatsapp'] = $whatsappClean;
-				}
-			} else {
-				unset($output['whatsapp']);
+			// Color Sanitization
+			$color_key = $key . '_color';
+			if (isset($input[$color_key])) {
+				$output[$color_key] = sanitize_hex_color($input[$color_key]) ?: $config['default_color'];
 			}
 		}
 
@@ -158,40 +112,12 @@ class HBC_Settings
 			$output['position'] = sanitize_text_field($input['position']);
 		}
 
-		// Colors
-		$color_fields = [
-			'phone_color' 		 => '#00B840',
-			'zalo_color' 		 => '#4D70FF',
-			'viber_color' 		 => '#CE48FE',
-			'whatsapp_color'	 => '#D7FED7',
-			'telegram_color'	 => '#E6F6FF',
-			'instagram_color' 	 => '#FFADC5',
-			'youtube_color'	 	 => '#FF4242',
-			'tiktok_color' 		 => '#202020',
-			'fanpage_color' 	 => '#1877F2',
-			'link_message_color' => '#D7FED7',
-			'form_color' 		 => '#00b894',
-		];
 
-		// Color fields
-		foreach ($color_fields as $key => $default) {
-			if (array_key_exists($key, $input)) {
-				$output[$key] = sanitize_hex_color($input[$key]) ?: $default;
-			}
+		// CF7 Color
+		if (isset($input['form_color'])) {
+			$output['form_color'] = sanitize_hex_color($input['form_color']) ?: '#00b894';
 		}
 
-		// URL fields
-		$url_fields = ['telegram', 'instagram', 'youtube', 'tiktok', 'fanpage', 'link_message'];
-		foreach ($url_fields as $key) {
-			if (array_key_exists($key, $input)) {
-				$val = trim($input[$key]);
-				if ($val !== '') {
-					$output[$key] = esc_url_raw($val);
-				} else {
-					unset($output[$key]);
-				}
-			}
-		}
 
 		// CF7
 		if (isset($input['cf7_form_id'])) {
@@ -226,60 +152,83 @@ class HBC_Settings
 		// Active tab
 		$active_tab = $_GET['tab'] ?? 'button';
 		
-		// Services
-		$services = [
+		$services = self::get_services();
+
+		include HUPUNA_BUTTON_CONTACT_PATH . 'templates/setting-page.php';
+	}
+
+	/**
+	 * Get services configuration
+	 */
+	public static function get_services()
+	{
+		return [
 			'zalo' => [
 				'label' 		=> __('Zalo', 'hupuna-button-contact'),
 				'placeholder' 	=> '+84987654321',
 				'default_color' => '#4D70FF',
+				'type'			=> 'phone',
 			],
 			'phone' => [
 				'label' 		=> __('Phone', 'hupuna-button-contact'),
 				'placeholder' 	=> '+84987654321',
-				'default_color' => '#00B840',
+				'default_color' => '#4caf50',
+				'type'			=> 'phone',
 			],
 			'telegram' => [
-				'label' 		=> __('Link Telegram', 'hupuna-button-contact'),
+				'label' 		=> __('Telegram', 'hupuna-button-contact'),
 				'placeholder' 	=> 'Link Telegram',
-				'default_color' => '#E6F6FF',
+				'default_color' => '#039be5',
+				'type'			=> 'url',
 			],
 			'instagram' => [
-				'label' 		=> __('Link Instagram', 'hupuna-button-contact'),
+				'label' 		=> __('Instagram', 'hupuna-button-contact'),
 				'placeholder' 	=> 'Link Instagram',
-				'default_color' => '#FFADC5',
+				'default_color' => '#d71599',
+				'type'			=> 'url',
 			],
 			'youtube' => [
-				'label' 		=> __('Link Youtube', 'hupuna-button-contact'),
-				'placeholder' 	=> 'Link Youtube',
-				'default_color' => '#FF4242',
+				'label' 		=> __('YouTube', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link YouTube',
+				'default_color' => '#fe0101',
+				'type'			=> 'url',
 			],
 			'tiktok' => [
-				'label' 		=> __('Link Tiktok', 'hupuna-button-contact'),
-				'placeholder' 	=> 'Link Tiktok',
+				'label' 		=> __('TikTok', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link TikTok',
 				'default_color' => '#202020',
+				'type'			=> 'url',
 			],
 			'fanpage' => [
-				'label' 		=> __('Link Facebook', 'hupuna-button-contact'),
+				'label' 		=> __('Facebook', 'hupuna-button-contact'),
 				'placeholder' 	=> 'Link Facebook',
-				'default_color' => '#1877F2',
+				'default_color' => '#1877f2',
+				'type'			=> 'url',
 			],
-			'link_message' => [
-				'label' 		=> __('Link Message', 'hupuna-button-contact'),
-				'placeholder' 	=> 'Link Message',
-				'default_color' => '#D7FED7',
+			'messenger' => [
+				'label' 		=> __('Messenger', 'hupuna-button-contact'),
+				'placeholder' 	=> 'Link Messenger',
+				'default_color' => '#0084ff',
+				'type'			=> 'url',
 			],
 			'viber' => [
 				'label' 		=> __('Viber', 'hupuna-button-contact'),
 				'placeholder'	=> '+84987654321',
-				'default_color' => '#CE48FE',
+				'default_color' => '#6f3faa',
+				'type'			=> 'phone',
 			],
 			'whatsapp' => [
-				'label' 		=> __('Whatsapp', 'hupuna-button-contact'),
+				'label' 		=> __('WhatsApp', 'hupuna-button-contact'),
 				'placeholder' 	=> '+84987654321',
-				'default_color' => '#D7FED7',
+				'default_color' => '#29a71a',
+				'type'			=> 'phone',
+			],
+			'email' => [
+				'label' 		=> __('Email', 'hupuna-button-contact'),
+				'placeholder' 	=> 'example@gmail.com',
+				'default_color' => '#d8d8d8',
+				'type'			=> 'email',
 			],
 		];
-
-		include HUPUNA_BUTTON_CONTACT_PATH . 'templates/setting-page.php';
 	}
 }

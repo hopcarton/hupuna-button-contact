@@ -21,7 +21,6 @@ define( 'HUPUNA_BUTTON_CONTACT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'HUPUNA_BUTTON_CONTACT_URL', plugin_dir_url( __FILE__ ) );
 
 require_once HUPUNA_BUTTON_CONTACT_PATH . 'inc/class-hbc.php';
-require_once HUPUNA_BUTTON_CONTACT_PATH . 'inc/class-hbc-init.php';
 
 function hupuna_button_contact_init() {
 	HBC::get_instance();
