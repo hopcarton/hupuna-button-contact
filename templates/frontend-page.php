@@ -9,7 +9,7 @@
         <a href="<?php echo esc_url($btn['href']); ?>"
            class="hbc-float-btn <?php echo esc_attr($btn['class']); ?>"
            data-color="<?php echo esc_attr($btn['color']); ?>"
-           style="background:<?php echo esc_attr($btn['color']); ?>;"
+           style="background:<?php echo esc_attr($btn['color']); ?>; color:<?php echo esc_attr($btn['color']); ?>;"
            <?php echo $btn['target'] ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>
            aria-label="<?php echo esc_attr(ucfirst($key)); ?>">
         </a>
@@ -19,7 +19,7 @@
     <?php if ($cf7_form_id && class_exists('WPCF7') && post_type_exists('wpcf7_contact_form')) : ?>
         <button class="hbc-float-btn hbc-contact-btn hbc-btn-has-text"
                 data-color="<?php echo esc_attr($formColor); ?>"
-                style="background:<?php echo esc_attr($formColor); ?>;"
+                style="background:<?php echo esc_attr($formColor); ?>; color:<?php echo esc_attr($formColor); ?>;"
                 aria-label="<?php esc_attr_e('Contact Us', 'hupuna-button-contact'); ?>">
             <span class="hbc-btn-text"><?php echo esc_html($contact_button_text); ?></span>
         </button>
